@@ -2,7 +2,6 @@ services:
   - type: web
     name: betting-backend
     env: node
-    plan: free
     buildCommand: npm install
     startCommand: npm start
     envVars:
@@ -36,12 +35,11 @@ services:
   - type: web
     name: betting-frontend
     env: static
-    plan: free
     buildCommand: npm install && npm run build
     staticPublishPath: dist
     envVars:
       - key: VITE_API_URL
-        value: https://betting-backend.onrender.com  # Update this after backend is live
+        value: https://betting-backend.onrender.com   # ← Update this later
 
 databases:
   - name: betting-db
