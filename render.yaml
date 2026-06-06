@@ -11,7 +11,7 @@ services:
       - key: PORT
         value: 10000
       - key: THE_ODDS_API_KEY
-        sync: false  # Set this manually in Render dashboard
+        sync: false
       - key: DB_HOST
         fromDatabase:
           name: betting-db
@@ -41,9 +41,8 @@ services:
     staticPublishPath: dist
     envVars:
       - key: VITE_API_URL
-        value: https://betting-backend.onrender.com  # Update after backend deploys
+        value: https://betting-backend.onrender.com  # Update this after backend is live
 
 databases:
   - name: betting-db
     plan: free
-    postgresVersion: "16"
